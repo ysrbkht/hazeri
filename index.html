@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa-AF" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حاضری صنف</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5fb;--card:#fff;--ink:#1b2340;--mute:#6b7592;--line:#e3e7f2;--pri:#4f46e5;--pri2:#7c3aed;--p:#16a34a;--pb:#dcfce7;--a:#dc2626;--ab:#fee2e2;--l:#d97706;--lb:#fef3c7;--e:#2563eb;--eb:#dbeafe;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1426;--card:#181f38;--ink:#eef0fa;--mute:#98a2c4;--line:#283052;--pb:#12351f;--ab:#3b1517;--lb:#3a2a0b;--eb:#14284d;--p:#4ade80;--a:#f87171;--l:#fbbf24;--e:#60a5fa}}
+:root[data-theme="dark"]{--bg:#0f1426;--card:#181f38;--ink:#eef0fa;--mute:#98a2c4;--line:#283052;--pb:#12351f;--ab:#3b1517;--lb:#3a2a0b;--eb:#14284d;--p:#4ade80;--a:#f87171;--l:#fbbf24;--e:#60a5fa}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+header{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border-radius:22px;padding:22px 20px;box-shadow:0 12px 30px rgba(79,70,229,.3)}
+header h1{margin:0;font-size:22px;font-weight:800}
+header p{margin:4px 0 0;opacity:.85;font-size:14px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;background:rgba(255,255,255,.16);border-radius:14px;padding:8px}
+.nav button{background:rgba(255,255,255,.2);border:0;color:#fff;width:38px;height:38px;border-radius:10px;font-size:18px;cursor:pointer;font-family:inherit}
+.nav .d{text-align:center;font-weight:600;font-size:15px}
+.nav .t{background:#fff;color:var(--pri);width:auto;padding:0 12px;font-size:13px;font-weight:600}
+.tabs{display:flex;gap:6px;margin:16px 0;background:var(--card);padding:5px;border-radius:14px;border:1px solid var(--line)}
+.tabs button{flex:1;border:0;background:none;padding:10px;border-radius:10px;font:inherit;font-weight:600;color:var(--mute);cursor:pointer}
+.tabs button.on{background:var(--pri);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 6px;text-align:center}
+.st b{display:block;font-size:22px;font-weight:800}
+.st span{font-size:12px;color:var(--mute)}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px;display:flex}
+.bar i{display:block;height:100%;background:var(--p);transition:width .3s}
+.row{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.nm{flex:1;min-width:110px;font-weight:600}
+.btns{display:flex;gap:6px}
+.btns button{border:1.5px solid var(--line);background:var(--card);color:var(--mute);padding:8px 11px;border-radius:11px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.btns button.p.on{background:var(--pb);color:var(--p);border-color:var(--p)}
+.btns button.a.on{background:var(--ab);color:var(--a);border-color:var(--a)}
+.btns button.l.on{background:var(--lb);color:var(--l);border-color:var(--l)}
+.btns button.e.on{background:var(--eb);color:var(--e);border-color:var(--e)}
+.act{display:flex;gap:8px;margin-bottom:14px}
+.btn{border:0;background:var(--pri);color:#fff;padding:11px 16px;border-radius:12px;font:inherit;font-weight:600;cursor:pointer}
+.btn.g{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn.r{background:var(--ab);color:var(--a)}
+input[type=text]{flex:1;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:11px 14px;font:inherit;min-width:0}
+.empty{text-align:center;color:var(--mute);padding:40px 10px;background:var(--card);border:1px dashed var(--line);border-radius:16px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+th,td{padding:11px 10px;text-align:center;border-bottom:1px solid var(--line)}
+th{color:var(--mute);font-weight:600;font-size:12px}
+td:first-child,th:first-child{text-align:right}
+.pc{display:inline-block;padding:3px 10px;border-radius:20px;font-weight:700;font-size:13px}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:12px;font-size:14px;opacity:0;transition:.3s;pointer-events:none}
+.toast.s{opacity:1}
+:root{--bg:#f4f6fa;--ink:#0f172a;--mute:#64748b;--line:#e5e9f0;--pri:#0f766e;--pb:#d1fae5;--p:#059669;--a:#e11d48;--ab:#ffe4e9;--l:#d97706;--e:#2563eb}
+header{position:relative;background:radial-gradient(circle at 15% 0%,#134e4a 0,transparent 55%),linear-gradient(160deg,#0f172a,#1e293b);border-radius:24px;padding:22px 20px 16px;box-shadow:0 18px 40px -12px rgba(15,23,42,.45)}
+header h1{display:flex;align-items:center;gap:10px;font-size:20px}
+.logo{width:38px;height:38px;border-radius:11px;background:rgba(94,234,212,.15);border:1px solid rgba(94,234,212,.35);display:grid;place-items:center;color:#5eead4}
+header p{margin:6px 0 0;color:#94a3b8;padding-inline-start:48px}
+#ring{position:absolute;left:18px;top:16px;width:68px;height:68px;color:#fff}
+#ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:14px;font-weight:800}
+.nav{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);margin-top:18px}
+.nav button{background:rgba(255,255,255,.1)}
+.nav .t{background:#5eead4;color:#0f172a}
+.nav .d{font-size:16px;font-weight:800}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px}
+.wd{background:none;border:0;color:#cbd5e1;border-radius:12px;padding:8px 0 6px;font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.wd small{font-size:10px;opacity:.8}
+.wd b{font-size:16px}
+.wd i{width:5px;height:5px;border-radius:50%;background:transparent}
+.wd i.h{background:#5eead4}
+.wd.tdy b{color:#5eead4}
+.wd.on{background:#fff;color:#0f172a}
+.wd.on b{color:#0f172a}
+.wd.on i.h{background:var(--pri)}
+.tabs{border-radius:16px;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.row{border-radius:14px;border-right:4px solid var(--line);box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.row.p{border-right-color:var(--p)}.row.a{border-right-color:var(--a)}.row.l{border-right-color:var(--l)}.row.e{border-right-color:var(--e)}
+.st{border-radius:14px;position:relative;overflow:hidden}
+.st::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--p)}
+.st:nth-child(2)::before{background:var(--a)}.st:nth-child(3)::before{background:var(--l)}.st:nth-child(4)::before{background:var(--e)}
+.btns button{border-radius:10px}
+.bar{height:6px}
+th{background:rgba(100,116,139,.07)}
+#sv{position:absolute;left:12px;top:88px;width:80px;text-align:center;font-size:10px;color:#94a3b8}
+@media(max-width:520px){.btns{width:100%}.btns button{flex:1;padding:9px 4px}}
+#lo{position:absolute;left:18px;top:106px;width:68px;background:rgba(255,255,255,.12);border:0;color:#cbd5e1;border-radius:8px;font:inherit;font-size:11px;padding:3px 0;cursor:pointer}
+.login{position:fixed;inset:0;z-index:50;background:var(--bg);display:none;place-items:center;padding:20px}
+.login.on{display:grid}
+.lc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 22px;width:100%;max-width:360px;box-shadow:0 18px 40px -12px rgba(15,23,42,.25);text-align:center}
+.lc h2{margin:0 0 4px}.lc p{margin:0 0 18px;color:var(--mute);font-size:14px}
+.lc input{width:100%;margin-bottom:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:12px 14px;font:inherit;direction:ltr;text-align:left}
+.lc .btn{width:100%}#le{color:var(--a);font-size:13px;min-height:20px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1><span class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 13l2 2 4-4"/></svg></span>دفتر حاضری صنف</h1>
+<p id="sub"></p>
+<div class="nav"><button id="nx" aria-label="روز بعد">›</button><div class="d" id="dt"></div><button id="pv" aria-label="روز قبل">‹</button><button class="t" id="td">امروز</button></div>
+<div class="week" id="wk"></div><div id="ring"></div><div id="sv"></div><button id="lo" hidden>خروج</button></header>
+<div class="tabs"><button data-t="a" class="on">حاضری</button><button data-t="r">گزارش</button><button data-t="s">شاگردان</button></div>
+<main id="main"></main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+var KEY='hazeri_v1',S={students:[],att:{}},tab='a',cur=iso(new Date());
+try{var raw=localStorage.getItem(KEY);if(raw)S=JSON.parse(raw)}catch(e){}
+function setSv(t){var e=document.getElementById('sv');if(e)e.textContent=t}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}if(window.cloudSave)window.cloudSave(JSON.stringify(S))}
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function pd(s){var a=s.split('-');return new Date(+a[0],a[1]-1,+a[2])}
+function n(x){return Number(x).toLocaleString('fa')}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var fmt=new Intl.DateTimeFormat('fa-AF-u-ca-persian',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+var L={p:'حاضر',a:'غایب',l:'دیر',e:'رخصت'};
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.className='toast s';setTimeout(function(){t.className='toast'},1800)}
+function shift(k){var d=pd(cur);d.setDate(d.getDate()+k);cur=iso(d);render()}
+document.getElementById('nx').onclick=function(){shift(1)};
+document.getElementById('pv').onclick=function(){shift(-1)};
+document.getElementById('td').onclick=function(){cur=iso(new Date());render()};
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){tab=b.dataset.t;render()}});
+function mark(id,v){var d=S.att[cur]=S.att[cur]||{};d[id]=d[id]===v?undefined:v;save();render()}
+function markAll(v){var d=S.att[cur]=S.att[cur]||{};S.students.forEach(function(s){d[s.id]=v});save();render();toast('همه '+L[v]+' ثبت شدند')}
+function addStu(){var i=document.getElementById('ni'),v=i.value.trim();if(!v)return;S.students.push({id:'s'+Date.now()+Math.floor(Math.random()*99),name:v});save();render();toast('شاگرد اضافه شد')}
+function delStu(id){if(!confirm('این شاگرد حذف شود؟'))return;S.students=S.students.filter(function(s){return s.id!==id});save();render()}
+function calc(){return S.students.map(function(s){var c={p:0,a:0,l:0,e:0},t=0;Object.keys(S.att).forEach(function(d){var v=S.att[d][s.id];if(v){c[v]++;t++}});return{s:s,c:c,t:t,pc:t?Math.round((c.p+c.l)/t*100):null}})}
+function copyRep(){var t='گزارش حاضری\n';calc().forEach(function(r){t+=r.s.name+': حاضر '+r.c.p+'، غایب '+r.c.a+'، دیر '+r.c.l+'، رخصت '+r.c.e+(r.pc===null?'':' ('+r.pc+'%)')+'\n'});try{navigator.clipboard.writeText(t).then(function(){toast('گزارش کپی شد')},function(){toast('کپی ممکن نشد')})}catch(e){toast('کپی ممکن نشد')}}
+var wf=new Intl.DateTimeFormat('fa-AF-u-ca-persian',{weekday:'short'}),df=new Intl.DateTimeFormat('fa-AF-u-ca-persian',{day:'numeric'});
+function drawExtra(){
+ var d=pd(cur),off=(d.getDay()+1)%7,s=new Date(d.getFullYear(),d.getMonth(),d.getDate()-off),h='',td=iso(new Date());
+ for(var i=0;i<7;i++){var x=new Date(s.getFullYear(),s.getMonth(),s.getDate()+i),k=iso(x),a=S.att[k],has=a&&Object.keys(a).some(function(q){return a[q]});
+  h+='<button class="wd'+(k===cur?' on':'')+(k===td?' tdy':'')+'" onclick="cur=\''+k+'\';render()"><small>'+wf.format(x)+'</small><b>'+df.format(x)+'</b><i'+(has?' class="h"':'')+'></i></button>'}
+ document.getElementById('wk').innerHTML=h;
+ var dd=S.att[cur]||{},m=0,pr=0;S.students.forEach(function(q){var v=dd[q.id];if(v){m++;if(v==='p'||v==='l')pr++}});
+ var pc=m?Math.round(pr/m*100):0,C=2*Math.PI*26;
+ document.getElementById('ring').innerHTML='<svg width="68" height="68" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="7"/><circle cx="34" cy="34" r="26" fill="none" stroke="#5eead4" stroke-width="7" stroke-linecap="round" stroke-dasharray="'+(C*pc/100)+' '+C+'" transform="rotate(-90 34 34)"/></svg><span>'+(m?n(pc)+'٪':'—')+'</span>';
+}
+function render(){
+ var m=document.getElementById('main'),d=S.att[cur]||{},st=S.students;
+ document.getElementById('dt').textContent=fmt.format(pd(cur));drawExtra();
+ document.getElementById('sub').textContent=st.length?n(st.length)+' شاگرد در صنف':'شاگردان خود را اضافه کنید';
+ document.querySelectorAll('.tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===tab)});
+ var h='';
+ if(tab==='a'){
+  if(!st.length){h='<div class="empty">هنوز شاگردی ثبت نشده.<br><br><button class="btn" onclick="tab=\'s\';render()">افزودن شاگردان</button></div>'}
+  else{
+   var c={p:0,a:0,l:0,e:0};st.forEach(function(s){if(d[s.id])c[d[s.id]]++});
+   var un=st.length-c.p-c.a-c.l-c.e;
+   h+='<div class="stats">'+['p','a','l','e'].map(function(k){return'<div class="st"><b style="color:var(--'+k+')">'+n(c[k])+'</b><span>'+L[k]+'</span></div>'}).join('')+'</div>';
+   h+='<div class="bar"><i style="width:'+(c.p/st.length*100)+'%"></i><i style="width:'+(c.l/st.length*100)+'%;background:var(--l)"></i><i style="width:'+(c.e/st.length*100)+'%;background:var(--e)"></i></div>';
+   h+='<div class="act"><button class="btn" onclick="markAll(\'p\')">✓ همه حاضر</button><button class="btn g" onclick="S.att[cur]={};save();render()">پاک کردن</button>'+(un?'<span style="align-self:center;color:var(--mute);font-size:13px">'+n(un)+' نفر ثبت نشده</span>':'')+'</div>';
+   st.forEach(function(s){h+='<div class="row '+(d[s.id]||'')+'"><div class="av" style="background:hsl('+(s.name.charCodeAt(0)*47%360)+',55%,42%)">'+esc(s.name.charAt(0))+'</div><div class="nm">'+esc(s.name)+'</div><div class="btns">'+['p','a','l','e'].map(function(k){return'<button class="'+k+(d[s.id]===k?' on':'')+'" onclick="mark(\''+s.id+'\',\''+k+'\')">'+L[k]+'</button>'}).join('')+'</div></div>'});
+  }
+ }else if(tab==='r'){
+  var R=calc(),days=Object.keys(S.att).filter(function(k){return Object.keys(S.att[k]).some(function(i){return S.att[k][i]})}).length;
+  if(!st.length||!days){h='<div class="empty">هنوز حاضری ثبت نشده است.</div>'}
+  else{
+   h+='<div class="act"><span style="align-self:center;color:var(--mute);font-size:14px;flex:1">مجموع روزهای ثبت‌شده: <b>'+n(days)+'</b></span><button class="btn g" onclick="copyRep()">کپی گزارش</button></div>';
+   h+='<div class="tw"><table><tr><th>نام</th><th>حاضر</th><th>غایب</th><th>دیر</th><th>رخصت</th><th>٪ حضور</th></tr>';
+   R.forEach(function(r){var col=r.pc===null?'var(--mute)':r.pc>=80?'var(--p)':r.pc>=60?'var(--l)':'var(--a)',bg=r.pc===null?'var(--line)':r.pc>=80?'var(--pb)':r.pc>=60?'var(--lb)':'var(--ab)';
+    h+='<tr><td>'+esc(r.s.name)+'</td><td>'+n(r.c.p)+'</td><td>'+n(r.c.a)+'</td><td>'+n(r.c.l)+'</td><td>'+n(r.c.e)+'</td><td><span class="pc" style="color:'+col+';background:'+bg+'">'+(r.pc===null?'—':n(r.pc)+'٪')+'</span></td></tr>'});
+   h+='</table></div>';
+  }
+ }else{
+  h+='<div class="act"><input type="text" id="ni" placeholder="نام شاگرد جدید..." onkeydown="if(event.key===\'Enter\')addStu()"><button class="btn" onclick="addStu()">+ افزودن</button></div>';
+  if(!st.length)h+='<div class="empty">لیست شاگردان خالی است.</div>';
+  st.forEach(function(s,i){h+='<div class="row"><div class="av">'+n(i+1)+'</div><div class="nm">'+esc(s.name)+'</div><button class="btn r" onclick="delStu(\''+s.id+'\')">حذف</button></div>'});
+ }
+ m.innerHTML=h;
+}
+render();
+</script>
+<div class="login" id="login"><div class="lc"><h2>دفتر حاضری صنف</h2><p>برای ورود، ایمیل و رمز خود را وارد کنید</p>
+<input id="em" type="email" placeholder="ایمیل" autocomplete="username"><input id="pw" type="password" placeholder="رمز عبور" autocomplete="current-password">
+<button class="btn" id="lg">ورود</button><div id="le"></div></div></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,doc,onSnapshot,setDoc} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+/* ====== تنظیمات Firebase خود را اینجا بگذارید ====== */
+const firebaseConfig={
+  apiKey:"AIzaSyABDNcGy4zJDyTHOcykatSyJg6hq1AWXmI",
+  authDomain:"hazeri-770f9.firebaseapp.com",
+  projectId:"hazeri-770f9",
+  appId:"1:426468948426:web:96bd5191fc3c871f3eb733"
+};
+/* ================================================= */
+const $=id=>document.getElementById(id);
+if(firebaseConfig.apiKey.startsWith("PASTE")){window.setSv('ذخیرهٔ محلی (Firebase تنظیم نشده)')}
+else{
+ const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
+ let unsub=null,ref=null,timer=null,first=true;
+ window.cloudSave=j=>{if(!ref)return;window.setSv('در حال ذخیره…');clearTimeout(timer);
+  timer=setTimeout(()=>{timer=null;setDoc(ref,{json:j,updated:Date.now()}).then(()=>window.setSv('ذخیرهٔ ابری ✓'),()=>window.setSv('خطا در ذخیره'))},400)};
+ const login=()=>{$('le').textContent='';signInWithEmailAndPassword(auth,$('em').value.trim(),$('pw').value).catch(()=>{$('le').textContent='ایمیل یا رمز اشتباه است'})};
+ $('lg').onclick=login;$('pw').onkeydown=e=>{if(e.key==='Enter')login()};
+ $('lo').onclick=()=>signOut(auth);
+ onAuthStateChanged(auth,u=>{
+  if(unsub){unsub();unsub=null}
+  if(!u){ref=null;first=true;$('login').classList.add('on');$('lo').hidden=true;window.setSv('');return}
+  $('login').classList.remove('on');$('lo').hidden=false;
+  ref=doc(db,'teachers',u.uid);
+  unsub=onSnapshot(ref,sn=>{
+   if(first){first=false;
+    if(sn.exists()&&sn.data().json){try{window.S=JSON.parse(sn.data().json)}catch(e){}window.render()}
+    else if(window.S.students.length){setDoc(ref,{json:JSON.stringify(window.S),updated:Date.now()})}
+    window.setSv('ذخیرهٔ ابری ✓');return}
+   if(timer||sn.metadata.hasPendingWrites||!sn.exists())return;
+   const j=sn.data().json;if(j&&j!==JSON.stringify(window.S)){try{window.S=JSON.parse(j);window.render()}catch(e){}}
+  },()=>window.setSv('خطا در اتصال'));
+ });
+ $('login').classList.add('on');
+}
+</script>
+</body>
+</html>

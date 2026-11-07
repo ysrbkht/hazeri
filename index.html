@@ -108,8 +108,8 @@ main.wrap{padding-top:20px;padding-bottom:48px;display:flex;flex-direction:colum
 .donut .big{font-size:25px;font-weight:800;fill:var(--ink)}
 .donut .sub{font-size:9.5px;font-weight:600;fill:var(--ink-2)}
 .sumr{display:flex;flex-direction:column;gap:14px;width:100%;min-width:0}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-@media (max-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(3,1fr)}.tile{padding:10px}.tile b{font-size:24px}}
 .tile{border-radius:12px;padding:10px 14px;display:flex;flex-direction:column}
 .tile b{font-size:28px;font-weight:800;line-height:1.2}
 .tile span{font-size:13.5px;font-weight:600}
@@ -135,7 +135,7 @@ main.wrap{padding-top:20px;padding-bottom:48px;display:flex;flex-direction:colum
 .nm{min-width:0}
 .nm strong{display:block;font-weight:700;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .nm small{color:var(--ink-2);font-size:12.5px}
-.seg{display:grid;grid-template-columns:repeat(4,minmax(64px,1fr));gap:6px}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(64px,1fr));gap:6px}
 .seg button{min-height:44px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);border-radius:10px;font-weight:600;font-size:14.5px;transition:background .12s,color .12s,border-color .12s}
 .seg button.p:hover{border-color:var(--ok);color:var(--ok-ink)}.seg button.a:hover{border-color:var(--no);color:var(--no-ink)}
 .seg button.l:hover{border-color:var(--leave);color:var(--leave-ink)}.seg button.t:hover{border-color:var(--late);color:var(--late-ink)}
@@ -173,6 +173,8 @@ main.wrap{padding-top:20px;padding-bottom:48px;display:flex;flex-direction:colum
 table.g{border-collapse:separate;border-spacing:0;min-width:max-content;background:var(--surface)}
 .g th,.g td{padding:0;border-bottom:1px solid var(--line)}
 .g tr:last-child td{border-bottom:0}
+.g .nmc span,.g .nmc small{display:block;overflow:hidden;text-overflow:ellipsis}
+.g .nmc small{font-weight:400;font-size:11.5px;color:var(--ink-2);line-height:1.3}
 .g .nmc{position:sticky;right:0;z-index:1;background:var(--surface);min-width:132px;max-width:170px;padding:6px 12px;font-weight:600;font-size:14px;border-left:1px solid var(--line);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .g thead th{background:var(--surface-2);font-weight:600}
 .g .hd{width:34px;min-width:34px;padding:5px 0;text-align:center;cursor:pointer;line-height:1.25}
@@ -209,14 +211,16 @@ textarea.field{padding:10px 14px;min-height:150px;width:100%;line-height:1.9;res
 .srow{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .srow:last-child{border-bottom:0}
 .srow .ix{color:var(--ink-2);font-weight:600;text-align:center}
-.srow input{min-height:40px;border:1px solid transparent;background:transparent;border-radius:8px;padding:0 10px;font-weight:600;width:100%}
-.srow input:hover{border-color:var(--line)}.srow input:focus{background:var(--surface-2);border-color:var(--line)}
+.srow input{min-height:40px;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:0 10px;font-weight:600;width:100%}
+.srow input:hover{border-color:var(--ink-2)}.srow input:focus{background:var(--surface);border-color:var(--focus)}
 .acts{display:flex;gap:4px;align-items:center}
 .ib{width:38px;height:38px;border:1px solid transparent;background:transparent;border-radius:8px;display:grid;place-items:center;color:var(--ink-2)}
 .ib:hover{background:var(--surface-2);border-color:var(--line);color:var(--ink)}
 .ib[disabled]{opacity:.3;cursor:default}
 .ib.del:hover{color:var(--no-ink);border-color:var(--no)}
 .confirm{display:inline-flex;gap:6px;align-items:center;font-size:13.5px;color:var(--no-ink);font-weight:600}
+.ins{display:grid;grid-template-columns:1fr 1fr;gap:6px;min-width:0}
+@media (max-width:640px){.ins{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 :root{color-scheme:light}
 [hidden]{display:none!important}
@@ -290,8 +294,8 @@ var JM=['حمل','ثور','جوزا','سرطان','اسد','سنبله','میز�
 var GM=['جنوری','فبروری','مارچ','اپریل','می','جون','جولای','اگست','سپتمبر','اکتوبر','نومبر','دسمبر'];
 var WD=['دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه','یکشنبه'];
 var WD1=['د','س','چ','پ','ج','ش','ی'];
-var ST={p:{label:'حاضر',short:'ح'},a:{label:'غایب',short:'غ'},l:{label:'رخصت',short:'ر'},t:{label:'دیر',short:'د'}};
-var KEYS=['p','a','l','t'];
+var ST={p:{label:'حاضر',short:'ح'},a:{label:'غایب',short:'غ'},l:{label:'رخصت',short:'ر'}};
+var KEYS=['p','a','l'];
 function isoToJdn(iso){var x=iso.split('-');return g2d(+x[0],+x[1],+x[2])}
 function jdnToIso(j){var g=d2g(j);return g.gy+'-'+pad(g.gm)+'-'+pad(g.gd)}
 function jInfo(iso){var j=isoToJdn(iso),s=d2j(j);return{jy:s.jy,jm:s.jm,jd:s.jd,wd:j%7,jdn:j}}
@@ -326,11 +330,11 @@ S.rm={jy:jInfo(TODAY).jy,jm:jInfo(TODAY).jm};
 
 /* ===== persistence: this device (localStorage) + Firebase (Firestore) ===== */
 /* Same document the earlier version used: teachers/{uid} = { json, updated }.
-   Stored codes: p حاضر، a غایب، l دیر، e رخصت. Inside the page "t" is دیر and "l" is رخصت, so we convert at the edge. */
+   Stored codes: p حاضر، a غایب، e رخصت (old files also had l = late; it is read as present). Inside the page رخصت is "l". */
 var KEY='hazeri_v1';
 var MODE='pending'; /* pending | cloud | local */
 var cloud={ref:null,setDoc:null,timer:null,last:''};
-var TO_STORE={t:'l',l:'e'},FROM_STORE={l:'t',e:'l'};
+var TO_STORE={l:'e'},FROM_STORE={l:'p',e:'l',t:'p'}; /* old "late" counts as present */
 function serialize(){
   var att={};
   Object.keys(S.att).sort().forEach(function(d){
@@ -338,13 +342,13 @@ function serialize(){
     Object.keys(r).forEach(function(k){if(r[k]){o[k]=TO_STORE[r[k]]||r[k];any=true}});
     if(any)att[d]=o;
   });
-  return JSON.stringify({students:S.students.map(function(s){return{id:s.id,name:s.name}}),att:att,
+  return JSON.stringify({students:S.students.map(function(s){return{id:s.id,name:s.name,father:s.father||''}}),att:att,
     settings:{className:S.settings.className||'',teacher:S.settings.teacher||''}});
 }
 function load(json){
   var o;try{o=JSON.parse(json)}catch(e){return false}
   if(!o||typeof o!=='object')return false;
-  S.students=(o.students||[]).filter(function(s){return s&&s.name}).map(function(s){return{id:String(s.id),name:String(s.name)}});
+  S.students=(o.students||[]).filter(function(s){return s&&s.name}).map(function(s){return{id:String(s.id),name:String(s.name),father:String(s.father||'')}});
   var m={};
   Object.keys(o.att||{}).forEach(function(d){
     var r=o.att[d]||{},x={};
@@ -394,14 +398,14 @@ function setMany(date,map){
 }
 function clearDay(date){delete S.att[date];persist()}
 function rid(){return Math.random().toString(36).slice(2,6)}
-function addStudents(names){
+function addStudents(list){
   var base=Date.now().toString(36);
-  names.forEach(function(nm,i){S.students.push({id:'s'+base+i+rid(),name:nm})});
+  list.forEach(function(x,i){S.students.push({id:'s'+base+i+rid(),name:x.name,father:x.father||''})});
   persist();
 }
-function renameStudent(id,nm){
-  var s=S.students.find(function(x){return x.id===id});if(!s||!nm||nm===s.name)return;
-  s.name=nm;persist();
+function renameStudent(id,f,v){
+  var s=S.students.find(function(x){return x.id===id});if(!s||(f==='name'&&!v)||v===(s[f]||''))return;
+  s[f]=v;persist();
 }
 function removeStudent(id){
   S.students=S.students.filter(function(x){return x.id!==id});
@@ -421,14 +425,14 @@ function wipeLocal(){
 
 /* ===== stats ===== */
 function countsFor(sid,days){
-  var c={p:0,a:0,l:0,t:0};
+  var c={p:0,a:0,l:0};
   days.forEach(function(d){var r=S.att[d.iso],v=r&&r[sid];if(v&&c[v]!==undefined)c[v]++});
   return c;
 }
-function rateOf(c){var n=c.p+c.a+c.l+c.t;return n?(c.p+c.t)/n*100:null}
+function rateOf(c){var n=c.p+c.a+c.l;return n?c.p/n*100:null}
 function pc(v){return v===null?'—':fa(Math.round(v))+'٪'}
 function dayCounts(date){
-  var r=S.att[date]||{},c={p:0,a:0,l:0,t:0};
+  var r=S.att[date]||{},c={p:0,a:0,l:0};
   S.students.forEach(function(s){var v=r[s.id];if(c[v]!==undefined)c[v]++});
   return c;
 }
@@ -465,11 +469,11 @@ function dayView(){
   else if(S.slow&&!S.ready)h+='<div class="banner">اتصال به ذخیره‌گاه کند است. لطفاً کمی صبر کنید.</div>';
   if(!S.ready){return h+skeleton()}
   if(!stu.length)return h+emptyState();
-  if(i.wd===4)h+='<div class="banner">امروز جمعه است و معمولاً رخصتی می‌باشد. اگر درس داشتید، حاضری را ثبت کنید.</div>';
-  var c=dayCounts(S.date),done=c.p+c.a+c.l+c.t,total=stu.length,rate=done?(c.p+c.t)/done*100:null;
+  if(i.wd===3)h+='<div class="banner">این روز پنجشنبه است و معمولاً رخصتی می‌باشد. اگر درس داشتید، حاضری را ثبت کنید.</div>';
+  var c=dayCounts(S.date),done=c.p+c.a+c.l,total=stu.length,rate=done?c.p/done*100:null;
   /* donut */
   var off=0,segs='';
-  [['p','sp'],['t','st'],['l','sl'],['a','sa']].forEach(function(x){
+  [['p','sp'],['l','sl'],['a','sa']].forEach(function(x){
     var len=c[x[0]]/total*100;if(!len)return;
     var vis=Math.max(len-(len<100?1.2:0),0.5);
     segs+='<circle class="'+x[1]+'" cx="60" cy="60" r="48" pathLength="100" stroke-dasharray="'+vis+' '+(100-vis)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 60 60)"/>';
@@ -487,7 +491,7 @@ function dayView(){
   h+='<section class="card"><ul class="list">'+stu.map(function(s,ix){
     var v=rec[s.id],ini=Array.from(s.name.trim())[0]||'؟',mc=countsFor(s.id,days);
     return '<li class="stu"><div class="ava '+(v||'')+'" aria-hidden="true">'+esc(ini)+(v?'<span class="bd">'+ST[v].short+'</span>':'')+'</div>'+
-      '<div class="nm"><strong>'+esc(s.name)+'</strong><small class="num">'+JM[i.jm-1]+': '+(mc.a?fa(mc.a)+' غیرحاضر':'بدون غیرحاضری')+(mc.l?'، '+fa(mc.l)+' رخصت':'')+'</small></div>'+
+      '<div class="nm"><strong>'+esc(s.name)+'</strong><small class="num">'+(s.father?'پدر: '+esc(s.father)+' · ':'')+JM[i.jm-1]+': '+(mc.a?fa(mc.a)+' غیرحاضر':'بدون غیرحاضری')+(mc.l?'، '+fa(mc.l)+' رخصت':'')+'</small></div>'+
       '<div class="seg" role="group" aria-label="وضعیت '+esc(s.name)+'">'+KEYS.map(function(k){return '<button class="'+k+(v===k?' on':'')+'" aria-pressed="'+(v===k)+'" data-act="set" data-sid="'+s.id+'" data-st="'+k+'">'+ST[k].label+'</button>'}).join('')+'</div></li>';
   }).join('')+'</ul></section>';
   return h;
@@ -498,15 +502,15 @@ function chartSvg(days){
   var s='<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="نمودار درصد حاضری هر روز">';
   [0,25,50,75,100].forEach(function(v){var y=pt+ph*(1-v/100);s+='<line class="gl" x1="'+pl+'" x2="'+x1+'" y1="'+y+'" y2="'+y+'"/><text class="tx num" x="'+(W-4)+'" y="'+(y+3.5)+'" text-anchor="end">'+fa(v)+'</text>'});
   days.forEach(function(d){
-    var cx=x1-(d.n-.5)*bw,r=dayRate(d.iso),fr=d.wd===4;
+    var cx=x1-(d.n-.5)*bw,r=dayRate(d.iso),fr=d.wd===3;
     s+='<text class="tx num'+(fr?' fr':'')+'" x="'+cx+'" y="'+(H-12)+'" text-anchor="middle">'+fa(d.n)+'</text>';
     if(r===null){s+='<line class="nd" x1="'+(cx-bw*.2)+'" x2="'+(cx+bw*.2)+'" y1="'+(pt+ph-1)+'" y2="'+(pt+ph-1)+'"/>';return}
     var bh=Math.max(ph*r/100,2),w=bw*.62;
-    s+='<rect class="br'+(r<75?' low':'')+'" x="'+(cx-w/2)+'" y="'+(pt+ph-bh)+'" width="'+w+'" height="'+bh+'" rx="3"><title>'+fa(d.n)+': '+pc(r)+'</title></rect>';
+    s+='<rect class="br'+''+'" x="'+(cx-w/2)+'" y="'+(pt+ph-bh)+'" width="'+w+'" height="'+bh+'" rx="3"><title>'+fa(d.n)+': '+pc(r)+'</title></rect>';
   });
   return s+'</svg>';
 }
-function dayRate(iso){var c=dayCounts(iso),n=c.p+c.a+c.l+c.t;return n?(c.p+c.t)/n*100:null}
+function dayRate(iso){var c=dayCounts(iso),n=c.p+c.a+c.l;return n?c.p/n*100:null}
 
 function reportView(){
   var rm=S.rm,days=monthDays(rm.jy,rm.jm),stu=S.students;
@@ -514,7 +518,7 @@ function reportView(){
   if(!S.ready)return h+skeleton();
   if(!stu.length)return h+emptyState();
   var classDays=days.filter(function(d){var r=S.att[d.iso];return r&&stu.some(function(s){return r[s.id]})});
-  var tot={p:0,a:0,l:0,t:0};
+  var tot={p:0,a:0,l:0};
   var rows=stu.map(function(s){var c=countsFor(s.id,days);KEYS.forEach(function(k){tot[k]+=c[k]});return{s:s,c:c,r:rateOf(c)}});
   var avg=rateOf(tot);
   h+='<div class="rt num"><div class="card rtile"><b>'+fa(classDays.length)+'</b><span>روز درسی ثبت‌شده</span></div>'+
@@ -522,19 +526,19 @@ function reportView(){
     '<div class="card rtile"><b>'+fa(tot.a)+'</b><span>مجموع غیرحاضری</span></div>'+
     '<div class="card rtile"><b>'+fa(tot.l)+'</b><span>مجموع رخصتی</span></div></div>';
   if(!classDays.length){h+='<div class="card sec"><p class="muted" style="margin:0">برای این ماه هنوز حاضری ثبت نشده است. از بخش «حاضری روزانه» شروع کنید.</p></div>'}
-  h+='<section class="card sec"><div class="sec-h"><h2 class="h2">درصد حاضری هر روز</h2><span class="muted" style="font-size:13px">ستون قرمز یعنی کمتر از ۷۵٪</span></div><div class="scroll">'+chartSvg(days)+'</div></section>';
+  h+='<section class="card sec"><div class="sec-h"><h2 class="h2">درصد حاضری هر روز</h2></div><div class="scroll">'+chartSvg(days)+'</div></section>';
   var today=TODAY;
   h+='<section class="card sec"><div class="sec-h"><h2 class="h2">جدول حاضری ماه</h2>'+'<button class="btn sm" data-act="export">'+I.dl+'دانلود جدول (CSV)</button>'+'</div>'+
     '<div class="legend">'+KEYS.map(function(k){return '<span><i class="m m-'+k+'">'+ST[k].short+'</i>'+ST[k].label+'</span>'}).join('')+'<span class="muted">برای باز کردن یک روز، روی شماره‌اش بزنید.</span></div>'+
-    '<div class="gridwrap"><table class="g"><thead><tr><th class="nmc">نام شاگرد</th>'+days.map(function(d){return '<th class="hd'+(d.wd===4?' fri':'')+(d.iso===today?' now':'')+'" data-act="goto" data-date="'+d.iso+'" title="'+WD[d.wd]+'"><b class="num">'+fa(d.n)+'</b><small>'+WD1[d.wd]+'</small></th>'}).join('')+'</tr></thead><tbody>'+
-    stu.map(function(s){return '<tr><td class="nmc">'+esc(s.name)+'</td>'+days.map(function(d){var v=(S.att[d.iso]||{})[s.id];return '<td class="cell'+(d.wd===4?' fri':'')+'" data-act="goto" data-date="'+d.iso+'"><i class="m'+(v&&ST[v]?' m-'+v:'')+'">'+(v&&ST[v]?ST[v].short:'')+'</i></td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div></section>';
+    '<div class="gridwrap"><table class="g"><thead><tr><th class="nmc">نام شاگرد</th>'+days.map(function(d){return '<th class="hd'+(d.wd===3?' fri':'')+(d.iso===today?' now':'')+'" data-act="goto" data-date="'+d.iso+'" title="'+WD[d.wd]+'"><b class="num">'+fa(d.n)+'</b><small>'+WD1[d.wd]+'</small></th>'}).join('')+'</tr></thead><tbody>'+
+    stu.map(function(s){return '<tr><td class="nmc"><span>'+esc(s.name)+'</span>'+(s.father?'<small>پدر: '+esc(s.father)+'</small>':'')+'</td>'+days.map(function(d){var v=(S.att[d.iso]||{})[s.id];return '<td class="cell'+(d.wd===3?' fri':'')+'" data-act="goto" data-date="'+d.iso+'"><i class="m'+(v&&ST[v]?' m-'+v:'')+'">'+(v&&ST[v]?ST[v].short:'')+'</i></td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div></section>';
   var sorted=rows.slice().sort(function(a,b){return (a.r===null?101:a.r)-(b.r===null?101:b.r)});
   h+='<section class="card sec"><div class="sec-h"><h2 class="h2">وضعیت هر شاگرد</h2><span class="muted" style="font-size:13px">از کمترین حاضری</span></div><div>'+sorted.map(function(x){
-    var low=x.r!==null&&x.r<75;
-    return '<div class="rk"><div class="rk-top"><span style="min-width:0;display:flex;align-items:center"><strong>'+esc(x.s.name)+'</strong>'+(low?'<span class="flag">نیاز به توجه</span>':'')+'</span><span class="pct num" style="color:'+(low?'var(--no-ink)':'var(--ink)')+'">'+pc(x.r)+'</span></div>'+
+    var low=false;
+    return '<div class="rk"><div class="rk-top"><span style="min-width:0;display:flex;align-items:center"><strong>'+esc(x.s.name)+'</strong>'+(x.s.father?'<small class="muted" style="margin-inline-start:8px;font-size:12.5px;white-space:nowrap">پدر: '+esc(x.s.father)+'</small>':'')+'</span><span class="pct num" style="color:'+(low?'var(--no-ink)':'var(--ink)')+'">'+pc(x.r)+'</span></div>'+
       '<div class="bar"><i class="'+(low?'low':'')+'" style="width:'+(x.r===null?0:x.r)+'%"></i></div>'+
       '<div class="chips num">'+KEYS.map(function(k){return '<span class="ch '+k+'">'+ST[k].label+' '+fa(x.c[k])+'</span>'}).join('')+'</div></div>';
-  }).join('')+'</div><p class="muted" style="margin:0;font-size:12.5px">درصد حاضری = (حاضر + دیر) ÷ روزهای ثبت‌شده برای همان شاگرد.</p></section>';
+  }).join('')+'</div><p class="muted" style="margin:0;font-size:12.5px">درصد حاضری = حاضر ÷ روزهای ثبت‌شده برای همان شاگرد.</p></section>';
   return h;
 }
 
@@ -543,9 +547,9 @@ function studentsView(){
   if(MODE==='local')h+='<div class="banner">اتصال به Firebase برقرار نشد. اطلاعات فقط در همین دستگاه ذخیره می‌شود.</div>';
   h+='<section class="card sec"><div class="sec-h"><h2 class="h2">افزودن شاگرد</h2><button class="btn sm" data-act="bulk">'+(S.bulk?'افزودن تکی':'افزودن گروهی')+'</button></div>';
   if(S.bulk){
-    h+='<p class="muted" style="margin:0;font-size:13.5px">نام شاگردان را بنویسید یا از جای دیگر کاپی کنید. هر نام در یک سطر.</p><textarea id="bulkText" class="field" placeholder="احمد رحیمی&#10;مریم نوری&#10;..."></textarea><div><button class="btn primary" data-act="bulkadd">'+I.plus+'افزودن همه</button></div>';
+    h+='<p class="muted" style="margin:0;font-size:13.5px">هر شاگرد در یک سطر: نام و تخلص، بعد از ویرگول نام پدر (نام پدر اختیاری است). از Excel هم می‌توانید کاپی کنید.</p><textarea id="bulkText" class="field" placeholder="احمد رحیمی، محمد&#10;مریم نوری، عبدالله&#10;..."></textarea><div><button class="btn primary" data-act="bulkadd">'+I.plus+'افزودن همه</button></div>';
   }else{
-    h+='<form id="addForm" class="addrow"><input id="newName" class="field" type="text" maxlength="60" placeholder="نام و تخلص شاگرد" aria-label="نام شاگرد" autocomplete="off"><button class="btn primary" type="submit">'+I.plus+'افزودن</button></form>';
+    h+='<form id="addForm" class="addrow"><input id="newName" class="field" type="text" maxlength="60" placeholder="نام و تخلص شاگرد" aria-label="نام شاگرد" autocomplete="off"><input id="newFather" class="field" type="text" maxlength="60" placeholder="نام پدر" aria-label="نام پدر" autocomplete="off"><button class="btn primary" type="submit">'+I.plus+'افزودن</button></form>';
   }
   h+='</section>';
   h+='<section class="card sec"><div class="sec-h"><h2 class="h2">شاگردان صنف</h2><span class="muted num">تعداد: '+fa(stu.length)+'</span></div>';
@@ -553,10 +557,10 @@ function studentsView(){
   else if(!stu.length)h+='<p class="muted" style="margin:0">هنوز نامی اضافه نشده است.</p>';
   else h+='<div>'+stu.map(function(s,i){
     var del=S.confirm==='del:'+s.id;
-    return '<div class="srow"><span class="ix num">'+fa(i+1)+'</span><input class="nm-in" data-sid="'+s.id+'" value="'+esc(s.name)+'" maxlength="60" aria-label="نام شاگرد '+fa(i+1)+'">'+
+    return '<div class="srow"><span class="ix num">'+fa(i+1)+'</span><div class="ins"><input class="nm-in" data-f="name" data-sid="'+s.id+'" value="'+esc(s.name)+'" maxlength="60" aria-label="نام شاگرد '+fa(i+1)+'"><input class="nm-in" data-f="father" data-sid="'+s.id+'" value="'+esc(s.father||'')+'" maxlength="60" placeholder="نام پدر" aria-label="نام پدر شاگرد '+fa(i+1)+'"></div>'+
       '<div class="acts">'+(del?'<span class="confirm">حذف شود؟ <button class="btn sm danger" data-act="delyes" data-sid="'+s.id+'">بله</button><button class="btn sm" data-act="delno">نه</button></span>':
       '<button class="ib" data-act="up" data-sid="'+s.id+'" aria-label="بالا"'+(i===0?' disabled':'')+'>'+I.up+'</button><button class="ib" data-act="down" data-sid="'+s.id+'" aria-label="پایین"'+(i===stu.length-1?' disabled':'')+'>'+I.down+'</button><button class="ib del" data-act="delask" data-sid="'+s.id+'" aria-label="حذف">'+I.trash+'</button>')+'</div></div>';
-  }).join('')+'</div><p class="muted" style="margin:0;font-size:12.5px">برای تغییر نام، روی نام بزنید و بنویسید. با حذف شاگرد، او از جدول‌ها هم برداشته می‌شود.</p>';
+  }).join('')+'</div><p class="muted" style="margin:0;font-size:12.5px">برای تغییر نام یا نام پدر، روی آن بزنید و بنویسید. با حذف شاگرد، او از جدول‌ها هم برداشته می‌شود.</p>';
   h+='</section>';
   return h;
 }
@@ -575,15 +579,18 @@ function render(force){
 function shiftDate(d){S.date=jdnToIso(isoToJdn(S.date)+d)}
 function csv(){
   var rm=S.rm,days=monthDays(rm.jy,rm.jm);
-  var head=['نام شاگرد'].concat(days.map(function(d){return d.n})).concat(['حاضر','غایب','رخصت','دیر','درصد حاضری']);
+  var head=['نام شاگرد','نام پدر'].concat(days.map(function(d){return d.n})).concat(['حاضر','غایب','رخصت','درصد حاضری']);
   var lines=[head].concat(S.students.map(function(s){
     var c=countsFor(s.id,days),r=rateOf(c);
-    return [s.name].concat(days.map(function(d){var v=(S.att[d.iso]||{})[s.id];return v&&ST[v]?ST[v].short:''})).concat([c.p,c.a,c.l,c.t,r===null?'':Math.round(r)]);
+    return [s.name,s.father||''].concat(days.map(function(d){var v=(S.att[d.iso]||{})[s.id];return v&&ST[v]?ST[v].short:''})).concat([c.p,c.a,c.l,r===null?'':Math.round(r)]);
   }));
   return '﻿'+lines.map(function(r){return r.map(function(x){x=String(x);return /[",\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}).join(',')}).join('\r\n');
 }
-function parseNames(t){
-  return t.split(/[\n\r،,;؛]+/).map(function(x){return x.replace(/^[\s\d۰-۹.\-–—)(]+/,'').trim()}).filter(Boolean);
+function parseStudents(t){
+  return t.split(/\r?\n/).map(function(line){
+    var p=line.replace(/^[\s\d۰-۹.\-–—)(]+/,'').split(/[،,\t\/]/);
+    return{name:(p[0]||'').trim(),father:(p[1]||'').trim()};
+  }).filter(function(x){return x.name});
 }
 document.addEventListener('click',function(e){
   var el=e.target.closest('[data-act]');if(!el)return;
@@ -603,7 +610,7 @@ document.addEventListener('click',function(e){
     case 'goto':S.date=el.dataset.date;S.tab='day';window.scrollTo(0,0);break;
     case 'goadd':S.tab='students';S.bulk=true;break;
     case 'bulk':S.bulk=!S.bulk;break;
-    case 'bulkadd':{var ta=$('#bulkText'),names=ta?parseNames(ta.value):[];if(names.length){addStudents(names);S.bulk=false}else return;break}
+    case 'bulkadd':{var ta=$('#bulkText'),names=ta?parseStudents(ta.value):[];if(names.length){addStudents(names);S.bulk=false}else return;break}
     case 'up':moveStudent(el.dataset.sid,-1);break;
     case 'down':moveStudent(el.dataset.sid,1);break;
     case 'delask':S.confirm='del:'+el.dataset.sid;break;
@@ -617,18 +624,18 @@ document.addEventListener('click',function(e){
 document.addEventListener('submit',function(e){
   if(e.target.id!=='addForm')return;
   e.preventDefault();
-  var inp=$('#newName'),names=parseNames(inp.value);
-  if(!names.length)return;
-  addStudents(names);S.focusNew=true;render(true);
+  var nm=$('#newName').value.trim(),fa2=$('#newFather').value.trim();
+  if(!nm)return;
+  addStudents([{name:nm,father:fa2}]);S.focusNew=true;render(true);
 });
 document.addEventListener('change',function(e){
   var t=e.target;
   if(t.id==='cn'){S.settings.className=t.value.trim();saveSettings()}
   else if(t.id==='tn'){S.settings.teacher=t.value.trim();saveSettings()}
   else if(t.classList.contains('nm-in')){
-    var v=t.value.trim();
-    if(!v){var s=S.students.find(function(x){return x.id===t.dataset.sid});if(s)t.value=s.name;return}
-    renameStudent(t.dataset.sid,v);
+    var f=t.dataset.f||'name',v=t.value.trim();
+    if(f==='name'&&!v){var s=S.students.find(function(x){return x.id===t.dataset.sid});if(s)t.value=s.name;return}
+    renameStudent(t.dataset.sid,f,v);
   }
 });
 document.addEventListener('visibilitychange',function(){
